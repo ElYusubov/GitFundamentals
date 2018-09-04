@@ -1,0 +1,99 @@
+# Check if Git is installed
+
+<# 
+    Multi commenting style
+	Comment number 1
+    Comment number 2 ...
+#>
+
+git --version
+
+git config --global
+git config --local
+
+git init
+
+git status
+
+git remote add origin https://github.com/ElYusubov/GitFundamentals.git
+git push -u origin master
+
+git log = to see history of commits
+
+git add -u = adds modified & deleted files to staging area
+git add -A = adds all changes, like un-tracked new files, deletetion
+
+git commit -m "Updated the README.md"
+
+git diff c6df77..31f405
+git diff HEAD~1..HEAD
+git diff HEAD~3..
+
+*** Can stage changes in 2 different files separately, ensure code compiles:
+git add file1.txt
+git status
+git commit -m "Fixed a bug W324 on file1."
+
+git add README.md
+git commit -m "Fixed a typo and added adition info for configuration."
+
+*** Revert back modified file
+git checkout README.md
+git reset --hard = reverts back deleted files and changes to last HEAD
+
+git reset --soft Head~1 = would revert back to previous commit & add files to staging
+
+git reset --hard Head~1 = would reveret back to previous head & DISCARD files, so no staged files
+
+*** Cleaning tmp files from build or logs
+git clean -n = shows files to be removed
+git clean -f = forsing to remove
+
+*** Push changed from local repo to master
+git push origin master
+
+***
+git log --oneline 
+git log --oneline | wc -l = gets number of commits
+git log --graph
+git shortlog
+git shortlog -sne 
+
+git show HEAD
+
+git remote -v = verbose version to tell what is remote
+
+****
+git branch = shows local branches
+git branch -r
+git tags
+
+***
+git fetch = runs fetch from remote repository
+git fetch origin = specify which remote branch to fetch from 
+git pull = will bring remote changes to local repo
+git pull = git fetch; git merge origin/master;
+
+git log origin/master
+
+git merge origin/master
+
+*** Set upstream branch: whar remote brach my local does mirror
+git branch --set-upstream master origin/master
+
+*** Pushing back to remote: git push
+git commit -am "Sharing is easy"
+
+*** To add ssh key
+git remote rm origin
+git remote -v
+git remote add origin git@github.com:ElYusubov/GitFundamentals.git
+
+*** Tagging practices
+git tag v1.0 = a stable point
+git tag -a v1.0_with_message
+
+git tag -s v1.0_signed = does require message
+
+git push --tags
+

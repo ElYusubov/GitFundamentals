@@ -1,3 +1,0 @@
--- file name is: file1
-
-Adding some line for demo.
